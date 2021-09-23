@@ -1,0 +1,71 @@
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky; /* sticks to the top so as we scroll down it will stay there */
+    top: 0;
+    z-index: 100;
+}
+
+.header_logo {
+    width: 100px;
+    object-fit: contain; /* keeps its aspect ratio */
+    margin: 0 20px;
+    margin-top: 18px;
+}
+
+.header_search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+}
+
+.header_searchInput {
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+
+.header_searchIcon {
+    padding: 5px;
+    height: 22px !important; /*  The important rule is used to add more importance to a property/value than normal, it will override all previous styling rules for that specific property on that element*/
+    background-color: #cd9042;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header_option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.header_optionLineOne {
+    font-size: 10px;
+}
+
+.header_optionLineTwo {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.shopping_cart {  /* this is header_optionbasket class */
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.cart_count { /* header_basketcount class in the span tag */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
