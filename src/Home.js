@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import Product from './Product.js'
 
-function Home() {
+const  Home = () => {
     return (
         <div className="home">
             <div className="home_container">
