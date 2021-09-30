@@ -7,18 +7,18 @@ const Product = ({ id, title, image, price, rating }) => {
 
     console.log("this is the basket:::", basket)
 
-const addToBasket = () => {
-    dispatch({
-        type: 'ADD_TO_BASKET',
-        item: {
-            id: id,
-            title: title,
-            image: image,
-            price: price,
-            rating: rating,
-        },
-    })
-}
+    const addToBasket = () => {
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id: id,
+                title: title,
+                image: image,
+                price: price,
+                rating: rating,
+            },
+        })
+    }
 
     return (
         <div className="product">
