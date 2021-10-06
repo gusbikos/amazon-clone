@@ -17,6 +17,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
             <img className='checkoutProduct_image' 
                 src={image} 
             />
+
             <div className="checkoutProduct_info">
                 <p className="checkoutProduct_title">
                     {title}
@@ -25,6 +26,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
+                
                 <div className="checkoutProduct_rating">
                     {Array(rating)
                         .fill()
@@ -32,6 +34,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
                             <p>⭐️</p>
                         ))}
                 </div>
+
                 <button onClick={removeFromBasket}>Remove from Basket</button>
             </div>
         </div>

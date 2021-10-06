@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [],
+    user: null
 }
 
 // Selector... also has the reduce function 
@@ -29,6 +30,13 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket
             }
+        
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
+            }
+            
         default:
             return state
     }

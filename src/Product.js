@@ -28,6 +28,7 @@ const Product = ({ id, title, image, price, rating }) => {
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
+
                 <div className="product_rating">
                     {Array(rating)
                         .fill()
@@ -35,6 +36,7 @@ const Product = ({ id, title, image, price, rating }) => {
                             <p>⭐️</p>
                         ))}
                 </div>
+
             </div>
             <img 
                 src={image}

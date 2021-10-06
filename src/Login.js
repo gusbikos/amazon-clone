@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { auth } from './firebase.js'
 
 const Login = () => {
+    const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const signIn = e => {
         e.preventDefault()
+
+        auth 
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push('/')
+            })
+            .catch(error => alert(error.message))
     }
 
     const register = e => {
@@ -18,6 +26,9 @@ const Login = () => {
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 console.log(auth)
+                if (auth) {
+                    history.push('/')
+                }
             })
             .catch(error => alert(error.message))
     }
@@ -30,6 +41,7 @@ const Login = () => {
                     alt=""
                 />
             </Link>
+
             <div className="login_container">
                 <h1>Sign-in</h1>
                 <form>
@@ -56,6 +68,7 @@ const Login = () => {
                     Create your Amazon Account
                 </button>
             </div>
+            
         </div>
     )
 }
