@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import './App.css'
 import Header from './Header.js'
 import Home from './Home.js'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Checkout from './Checkout.js'
 import Login from './Login.js'
+import Payment from './Payment.js'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider'
 
@@ -45,11 +46,16 @@ const App = () => {
             <Checkout />
           </Route >
 
+          <Route path="/payment">
+            <Header />
+            <Payment />
+          </Route>
+
           <Route path="/">
             <Header />
             <Home />
           </Route >
-          
+
         </Switch >
       </div>
     </Router>
