@@ -8,6 +8,7 @@ import { auth } from './firebase';
 
 function Header() {
     const [{ basket, user }, dispatch] = useStateValue()
+    console.log(user)
 
     const handleAuthentication = () => {
         if (user) {
@@ -34,12 +35,15 @@ function Header() {
             <div className="header_nav">
                 <Link to={!user && '/login'}>
                     <div onClick={handleAuthentication} className="header_option">
+                        
                         <span className="header_optionLineOne">
-                            Hello Guest
+                            Hello { user ? user.email : 'Guest'}
                         </span>
+
                         <span className="header_optionLineTwo">
                             {user ? 'Sign Out' : 'Sign In'}
                         </span>
+
                     </div>
                 </Link>
 
@@ -69,7 +73,7 @@ function Header() {
                         </span>
                     </div>
                 </Link>
-                
+
             </div>
         </div>
     )
