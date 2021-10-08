@@ -1,3 +1,5 @@
+// Where the app listens for events
+
 export const initialState = {
     basket: [],
     user: null
@@ -15,6 +17,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 basket: [...state.basket, action.item],
+            }
+
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                basket: []
             }
 
         case 'REMOVE_FROM_BASKET':
@@ -36,7 +44,7 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.user
             }
-            
+
         default:
             return state
     }
